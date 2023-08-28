@@ -29,7 +29,7 @@ layout: two-cols
 
 ::right::
 
-![WebRTC](signaling.svg)
+![WebRTC](/signaling.svg)
 
 ---
 layout: two-cols
