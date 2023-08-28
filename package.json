@@ -1,0 +1,21 @@
+{
+  "name": "describble-keynote",
+  "private": true,
+  "scripts": {
+    "build": "slidev build",
+    "dev": "slidev --open",
+    "export": "slidev export"
+  },
+  "dependencies": {
+    "@describble/ddnet": "^1.0.6",
+    "@slidev/cli": "^0.42.11",
+    "@slidev/theme-default": "latest",
+    "@slidev/theme-seriph": "latest",
+    "slidev-theme-penguin": "^2.1.0"
+  },
+  "devDependencies": {
+    "@iconify-json/logos": "^1.1.34",
+    "vite-plugin-top-level-await": "^1.3.1",
+    "vite-plugin-wasm": "^3.2.2"
+  }
+}
