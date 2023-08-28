@@ -4,9 +4,12 @@ background: https://images.unsplash.com/photo-1644088379091-d574269d422f
 highlighter: shiki
 class: text-left
 lineNumbers: truer
-info: |
+info: >
   ## Soutenance travail de Bachelor
-  Edition collaborative de documents structurés avec un chiffrement de bout-en-bout et un stockage distribué
+
+  Edition collaborative de documents structurés avec un chiffrement de
+  bout-en-bout et un stockage distribué
+
 
   Maxime Scharwath - 06.09.2023
 transition: slide-left
@@ -54,12 +57,19 @@ hideInToc: true
 ::right::
 <img src="/undraw_reading_list.svg" class="h-full" />
 
+
+---
+src: ./pages/ddnet.md
+hide: false
+---
+
 ---
 layout: cover
 background: https://images.unsplash.com/photo-1644088379091-d574269d422f
 ---
 
 # Optimisation
+
 
 ---
 layout: two-cols
@@ -81,6 +91,7 @@ Technique limitant l'exécution d'une fonction sur un temps donné.
 <div class="flex flex-col items-center justify-center h-full w-full">
     <Throttle class="w-full" />
 </div>
+
 
 ---
 layout: two-cols
@@ -144,6 +155,7 @@ function updateUser(id: number, update: User) {
 }
 </style>
 
+
 ---
 
 # Components
@@ -186,7 +198,6 @@ Also, HTML elements are valid:
 </div>
 -->
 
-
 ---
 class: px-20
 ---
@@ -217,6 +228,7 @@ theme: seriph
 
 Read more about [How to use a theme](https://sli.dev/themes/use.html) and
 check out the [Awesome Themes Gallery](https://sli.dev/themes/gallery.html).
+
 
 ---
 preload: false
@@ -294,6 +306,7 @@ const final = {
 
 </div>
 
+
 ---
 
 # LaTeX
@@ -321,6 +334,7 @@ $$
 <br>
 
 [Learn more](https://sli.dev/guide/syntax#latex)
+
 
 ---
 
@@ -401,6 +415,7 @@ database "MySql" {
 </div>
 
 [Learn More](https://sli.dev/guide/syntax.html#diagrams)
+
 
 ---
 layout: center
