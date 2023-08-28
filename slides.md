@@ -55,11 +55,6 @@ hideInToc: true
 <img src="/undraw_reading_list.svg" class="h-full" />
 
 ---
-src: ./pages/ddnet.md
-hide: false
----
-
----
 layout: cover
 background: https://images.unsplash.com/photo-1644088379091-d574269d422f
 ---
