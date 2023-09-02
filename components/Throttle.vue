@@ -6,21 +6,43 @@
 
     <div class="flex flex-col gap-4">
       <div class="bg-yellow-300 h-10 p-1 rounded ring-4 ring-yellow-500">
-        <div class="relative w-full h-full overflow-hidden rounded">
+        <div class="relative w-full h-full rounded">
           <div
               v-for="time in triggerTimes"
               :key="'trigger-' + time"
-              class="absolute w-2 h-full bg-yellow-500 rounded"
+              v-motion
+              :initial="{ opacity: 0, scale: 0 }"
+              :enter="{
+                opacity: 1,
+                scale: 1,
+                transition: {
+                  stiffness: 250,
+                  damping: 10,
+                  mass: 0.5,
+                },
+              }"
+              class="absolute w-2 h-full bg-yellow-500 rounded transition-all"
               :style="{ left: calculateLeft(time) + '%' }"
           />
         </div>
       </div>
       <div class="bg-green-300 h-10 p-1 rounded ring-4 ring-green-500">
-        <div class="relative w-full h-full overflow-hidden rounded">
+        <div class="relative w-full h-full rounded">
           <div
               v-for="time in executeTimes"
               :key="'execute-' + time"
-              class="absolute w-2 h-full bg-green-500 rounded"
+              v-motion
+              :initial="{ opacity: 0, scale: 0 }"
+              :enter="{
+                opacity: 1,
+                scale: 1,
+                transition: {
+                  stiffness: 250,
+                  damping: 10,
+                  mass: 0.5,
+                },
+              }"
+              class="absolute w-2 h-full bg-green-500 rounded transition-all"
               :style="{ left: calculateLeft(time) + '%' }"
           />
         </div>

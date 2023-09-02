@@ -7,6 +7,8 @@ background: https://images.unsplash.com/photo-1644088379091-d574269d422f
 ## Decentralized Document Network
 
 ---
+preload: false
+---
 
 # Cryptographie
 
@@ -61,6 +63,8 @@ sequenceDiagram
 </div>
 
 ---
+preload: false
+---
 
 # En-tête du document
 
@@ -68,6 +72,8 @@ Structure de données contenant les informations d'en-tête du document.
 
 <Header />
 
+---
+preload: false
 ---
 
 # Chiffrement des Messages : En Bref
@@ -78,3 +84,46 @@ Structure de données contenant les informations d'en-tête du document.
 - **ECDSA** : Signature pour certifier l'authenticité de l'expéditeur.
 
 <Encryption />
+
+---
+
+# Framework Agnostic
+
+DDNet a été conçu pour être **indépendant** de tout framework.
+
+<div class="flex gap-4 items-center justify-center w-full items-stretch">
+  <div>
+    <h3 class="flex items-center gap-2"><div class="i-logos-react text-4xl"></div>React Hooks</h3>
+
+```ts
+import { useState, useEffect } from 'react'
+function useDocument<T>(document: Document<T>) {
+  const [data, setData] = useState<T>(document.data)
+  useEffect(() => {
+    const unsub = document.on('change', ({ data }) => {
+      setData(data)
+    })
+    return unsub;
+  }, [document])
+  return data;
+}
+```
+  </div>
+  <div>
+    <h3 class="flex items-center gap-2"><div class="i-logos-vue text-4xl"></div>Vue 3 Composition API</h3>
+
+```ts
+import { ref, watchEffect } from 'vue'
+function useDocument<T>(document: Document<T>) {
+  const data = ref<T>(document.data)
+  watchEffect((onCleanup) => {
+    const unsub = document.on('change', ({ data }) => {
+      data.value = data;
+    })
+    onCleanup(unsub);
+  })
+  return data;
+}
+```
+  </div>
+</div>
