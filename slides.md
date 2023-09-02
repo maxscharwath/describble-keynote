@@ -65,20 +65,19 @@ background: https://images.unsplash.com/photo-1644088379091-d574269d422f
 
 # Contexte
 
-
 ---
 layout: two-cols
+hideInToc: true
 ---
 
-# Pourquoi ce projet ?
+# Le Paysage Actuel
 
-- Ère numérique : besoin d'édition & collaboration en temps réel.
-- Plateformes centralisées (Google Docs, MS 365) dominent.
-    - Problèmes :
-        - Dépendance aux grandes entreprises.
-        - Souveraineté des données compromise.
-        - Besoin constant d'Internet.
-        - Pas de contrôle sur ses données.
+- **Ère numérique** : L'édition et la collaboration en temps réel sont cruciales.
+- **Plateformes centralisées dominent** : Google Docs, MS 365, etc.
+    - Limitations :
+        - **Dépendance** : Être lié aux géants technologiques.
+        - **Souveraineté des données** : Où sont stockées nos informations ? Qui peut y accéder ?
+        - **Connectivité** : Besoin constant d'une connexion Internet stable.
 
 ::right::
 
@@ -86,18 +85,42 @@ layout: two-cols
     <img src="/undraw_cloud_hosting.svg" />
 </div>
 
-
+---
+layout: two-cols
+hideInToc: true
 ---
 
-# Solution : Describble
+# Contexte du Projet
 
-- **Plan Initial**: Utiliser le système tout fait "~~Condensation~~" 🚫.
-- **Pivot**: Création d'un système propre "DDNet" ✅.
-- **Chiffrement de bout-en-bout**: Sécurité avant tout.
-- **Stockage distribué**: Pas de point central de défaillance.
-- **Local First**: Travaillez n'importe où, synchronisez plus tard.
-- **Open Source**: Accessible à tous, pour être amélioré par la communauté.
+- **Mission initiale** : Créer un démonstrateur pour la startup Condensation.
+- **Complications** : Des problèmes ont surgi, rendant la collaboration avec Condensation non viable.
+- **Défi** : Nécessité d'adapter et de repenser le démonstrateur initial pour une nouvelle solution.
 
+::right::
+
+<div class="flex flex-col items-center justify-center w-full h-full">
+    <img src="/undraw_warning.svg" />
+</div>
+
+---
+layout: two-cols
+hideInToc: true
+---
+
+# Naissance de Describble et DDNet
+
+- **Describble** : Une adaptation plus poussée du démonstrateur initial.
+- **DDNet (Decentralized Document Network)** : Un système alternatif à Condensation.
+    - **Local First** : Travaillez hors ligne, synchronisez quand vous le souhaitez.
+    - **Décentralisé & Chiffré** : Sécurité, confidentialité et pas de point central de défaillance.
+    - **WEB** : Pas de téléchargement, pas d'installation, pas de configuration.
+    - **Open Source** : Pensé pour être accessible à tous.
+
+::right::
+
+<div class="flex flex-col items-center justify-center w-full h-full">
+    <img src="/undraw_lightbulb.svg" />
+</div>
 
 ---
 src: ./pages/ddnet.md
@@ -115,6 +138,7 @@ background: https://images.unsplash.com/photo-1644088379091-d574269d422f
 ---
 layout: two-cols
 preload: false
+hideInToc: true
 ---
 
 # Utilisation des Throttle
@@ -138,6 +162,7 @@ Technique limitant l'exécution d'une fonction sur un temps donné.
 ---
 layout: two-cols
 preload: false
+hideInToc: true
 ---
 
 # Utilisation des QuadTrees
@@ -160,6 +185,36 @@ Grâce aux QuadTrees, nous optimisons le rendu des layers du viewport, assurant 
 
 ---
 layout: two-cols
+hideInToc: true
+---
+# Optimisation du Rendu
+
+## Memoization
+**Caching** des résultats de fonctions pour éviter les traitements **redondants**. 
+
+De même, les composants React sont mis en cache pour éviter les **re-renders** inutiles.
+
+## Framer Motion
+Librairie d'animation pour React. Permet de créer des animations fluides et performantes en **dehors** du cycle de rendu de React.
+
+Cette technique a été utilisée pour le rendu des **curseurs**.
+
+::right::
+
+<div class="flex flex-col items-center justify-center h-full w-full">
+    <img src="/developer-tool.png" />
+</div>
+
+---
+layout: cover
+background: https://images.unsplash.com/photo-1644088379091-d574269d422f
+---
+
+# Développement
+
+---
+layout: two-cols
+hideInToc: true
 ---
 
 # Recoder des modules existants
@@ -177,6 +232,7 @@ Pourquoi recoder des paquets?
 
 ---
 layout: two-cols
+hideInToc: true
 ---
 
 # Publication et Open Source
@@ -196,12 +252,29 @@ Un point important pour moi est de **partager** mon travail et de le rendre **ac
     <img src="/github.png" />
 </div>
 
+---
+
+# Ce que j'ai appris
+
+- **Technique**:
+    - Maîtrise de nouvelles technologies et outils.
+    - Compréhension approfondie de l'édition collaborative et du chiffrement de bout en bout.
+    - Optimisation du rendu et des performances avec des techniques avancées.
+
+- **Gestion de Projet**:
+    - Adaptabilité face à des obstacles imprévus.
+    - Importance de la planification et de la réévaluation régulière des objectifs.
+    - Collaboration et communication avec une startup externe.
+  
+- **Développement Personnel**:
+    - Patience et persévérance face aux défis.
+    - Importance de l'auto-apprentissage en tech.
 
 ---
-layout: center
+layout: cover
 class: text-center
 hideInToc: true
 ---
 
-# MERCI DE VOTRE ATTENTION
-## Place aux démos !
+# Du Concret !
+## Place aux démonstrations en direct !

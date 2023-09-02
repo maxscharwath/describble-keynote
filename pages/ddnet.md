@@ -8,6 +8,7 @@ background: https://images.unsplash.com/photo-1644088379091-d574269d422f
 
 ---
 preload: false
+hideInToc: true
 ---
 
 # Cryptographie
@@ -18,6 +19,7 @@ Génération de la pair de clés via phrase mnémonique.
 
 ---
 layout: two-cols
+hideInToc: true
 ---
 
 # WebRTC et Serveur de Signalisation
@@ -35,6 +37,7 @@ layout: two-cols
 
 ---
 layout: two-cols
+hideInToc: true
 ---
 
 # Sécurité et Authentification
@@ -64,6 +67,7 @@ sequenceDiagram
 
 ---
 preload: false
+hideInToc: true
 ---
 
 # En-tête du document
@@ -74,6 +78,7 @@ Structure de données contenant les informations d'en-tête du document.
 
 ---
 preload: false
+hideInToc: true
 ---
 
 # Chiffrement des Messages : En Bref
@@ -86,7 +91,87 @@ preload: false
 <Encryption />
 
 ---
+layout: two-cols
+hideInToc: true
+---
+# Synchronisation du Document
 
+1. L'utilisateur **A** crée un document et ajoute l'utilisateur **B** à la liste des utilisateurs autorisés.
+2. L'utilisateur **B** diffuse une demande de document sur le réseau.
+3. L'utilisateur **A** reçoit la demande et répond avec l'en-tête du document.
+4. L'utilisateur **A** initie une connexion de pair à pair avec l'utilisateur **B** en utilisant le Serveur de Signalisation.
+5. L'utilisateur **A** et l'utilisateur **B** synchronisent les données du document via la connexion de pair à pair.
+
+::right::
+
+```mermaid
+sequenceDiagram
+    participant A as Utilisateur A
+    participant S as Serveur de Signalisation
+    participant B as Utilisateur B
+    B->>S: Diffuse une demande de document sur le réseau
+    S->>A: Transmet la demande à l'Utilisateur A
+    A->>A: Vérifie les droits d'accès
+    alt Accès autorisé
+        A->>S: Répond avec l'en-tête du document
+        S->>B: Transmet l'en-tête du document à l'Utilisateur B
+        Note over A,B: Établissement de la Connexion de Pair à Pair
+        loop until Connection Établie
+            A->>S: Envoie un signal de connexion à l'Utilisateur B
+            S->>B: Transmet le signal de connexion à l'Utilisateur B
+            B->>S: Envoie une réponse de connexion à l'Utilisateur A
+            S->>A: Transmet la réponse de connexion à l'Utilisateur A
+        end
+        Note over A,B: Synchronisation du Document
+        loop while Modifications du Document
+            A->>B: Synchronise les données du document avec l'Utilisateur B
+            B->>A: Synchronise les données du document avec l'Utilisateur A
+        end
+    end
+
+```
+---
+layout: two-cols
+hideInToc: true
+---
+# Injection de Dépendances
+
+Rendu possible grâce aux interfaces et aux classes abstraites de TypeScript.
+
+- **Testabilité**: Il est simple d'intégrer des "mocks" ou des fausses implémentations pour les tests, grâce à l'injection.
+- **Séparation des Préoccupations**: Chaque composant peut être développé, testé et modifié indépendamment.
+- **Modularité et Adaptabilité**: L'architecture du système permet des substitutions rapides pour répondre à divers besoins.
+
+::right::
+Browser
+```ts
+const client = new DocumentSharingClient({
+  sessionManager: new SessionManager(
+    new KeyManager('keys-store'),
+  ),
+  network: new WebSocketNetworkAdapter(
+    'wss://ddnet-server.fly.dev'
+  ),
+  storageProvider: new IDBStorageProvider(),
+})
+```
+
+Node.js
+```ts
+const client = new DocumentSharingClient({
+  sessionManager: new SessionManager(
+    new LocalKeyManager(),
+  ),
+  network: new TCPNetworkAdapter(
+    'ddnet-server.fly.dev', 443
+  ),
+  storageProvider: new NodeStorageProvider()
+})
+```
+
+---
+hideInToc: true
+---
 # Framework Agnostic
 
 DDNet a été conçu pour être **indépendant** de tout framework.
